@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 /**
  * Created by menf on 2017-01-19.
@@ -43,14 +44,7 @@ public  class SettingsFragment extends Fragment {
     }
 
 
-    public void onClick(View arg0) {
-        switch (arg0.getId()) {
 
-            case R.id.toggleButton:
-                //
-            case R.id.toggleButton2:
-                //
-        }
 
-    }
+
 }
