@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">SMproject</string>
+    <string name="OFF">Wyłączony</string>
+    <string name="ON">Wlączony</string>
+    <string name="dodaj_wysokosc">Wysokosc</string>
+    <string name="dodaj_dlugosc">Dlugosc</string>
+    <string name="dodaj_szerokosc">Szerokosc</string>
+    <string name="button_dodaj">Dodaj</string>
+    <string name="button_edytuj">Edytuj</string>
+    <string name="text_dodaj_akwarium">Dodaj akwarium</string>
+    <string name="potwierdzenie">Na pewno chcesz usunąć?</string>
+    <string name="potwierdzenie_tytul">Usuwanie</string>
+    <string name="tak">Tak</string>
+    <string name="nie">Nie</string>
+    <string name="title_activity_akwarium">Zarządzaj</string>
+    <string name="action_settings">Settings</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="nazwa">Nazwa</string>
+    <string name="wiek">Wiek</string>
+    <string name="ilosc">Ilość</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="shakes">Shakes</string>
+    <string name="dodaj_akwarium">Dodaj nowe akwarium</string>
+    <string name="gotoAkwarium">Przejdź do wybranego akwarium</string>
+    <string name="akwaria">Twoje akwaria</string>
+    <string name="dodajrybki">Dodaj nowe rybki</string>
+    <string name="dodajnowerybki">Dodaj rybki</string>
+    <string name="edytujrybke">Edytuj rybkę</string>
+</resources>

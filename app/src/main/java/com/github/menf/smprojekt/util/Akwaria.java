@@ -57,6 +57,10 @@ public class Akwaria {
     public void setSzerokosc(int szerokosc) {
         this.szerokosc = szerokosc;
     }
+
+    public float getPojemnosc() {
+        return szerokosc*wysokosc*dlugosc/1000;
+    }
 }
 
 

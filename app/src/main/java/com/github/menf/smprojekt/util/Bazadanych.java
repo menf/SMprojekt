@@ -23,7 +23,7 @@ public class Bazadanych extends SQLiteOpenHelper {
     private static final String wysokosc = "wysokosc";
     private static final String szerokosc = "szerokosc";
 
-    private static final String tabela_rybki = "tankowania";
+    private static final String tabela_rybki = "rybki";
     private static final String id_rybki = "id_rybki";
     private static final String id_akwaria = "id_akwaria";
     private static final String nazwa = "nazwa";

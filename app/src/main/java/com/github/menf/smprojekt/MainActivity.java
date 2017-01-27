@@ -27,7 +27,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ToggleButton;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements SharedPreferences.OnSharedPreferenceChangeListener {
     private SensorManager mSensorManager;
     private String shakes;
     private float mAccel; // acceleration apart from gravity
@@ -52,9 +52,8 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-            if (mAccel > 12) {
-                Toast toast = Toast.makeText(getApplicationContext(), "Device has shaken.", Toast.LENGTH_LONG);
-                toast.show();
+            if (mAccel > 12 && shakes.equals("Enable")) {
+               finish();
             }
             }
         }
@@ -76,7 +75,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         button1 = (ToggleButton) findViewById(R.id.toggleButton);
-        button2 = (ToggleButton) findViewById(R.id.toggleButton2);
 
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
@@ -94,6 +92,7 @@ public class MainActivity extends AppCompatActivity {
         mAccelLast = SensorManager.GRAVITY_EARTH;
 
        preferences = PreferenceManager.getDefaultSharedPreferences(this);
+        preferences.registerOnSharedPreferenceChangeListener(this);
        shakes = preferences.getString("Shake","");
 
     }
@@ -112,36 +111,13 @@ public class MainActivity extends AppCompatActivity {
         super.onPause();
     }
 
-
-
-
-    public void onClick(View arg0) {
-        switch (arg0.getId()) {
-
-            case R.id.toggleButton:
-                preferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-                SharedPreferences.Editor editor = preferences.edit();
-                if (button1.isChecked()) {
-                    editor.putString("Shake","Enable");
-                    editor.apply();
-                } else {
-                    editor.putString("Shake","Disable");
-                    editor.apply();
-                }
-                Toast.makeText(this, "1!",
-                        Toast.LENGTH_LONG).show();
-                break;
-            case R.id.toggleButton2:
-                if (button2.isChecked()) {
-                    // Enable vibrate
-                } else {
-                    // Disable vibrate
-                }
-                Toast.makeText(this, "2!",
-                        Toast.LENGTH_LONG).show();
-        break;
-        }
+    public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key)
+    {
+        shakes = sharedPreferences.getString(key,"");
     }
+
+
+
 
 
 
@@ -172,18 +148,7 @@ public class MainActivity extends AppCompatActivity {
             return 2;
         }
 
-        @Override
-        public CharSequence getPageTitle(int position) {
-            switch (position) {
-                case 0:
-                    return "SECTION 1";
-                case 1:
-                    return "SECTION 2";
-             //   case 2:
-               //     return "SECTION 3";
-            }
-            return null;
-        }
+
 
 
     }
